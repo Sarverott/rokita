@@ -1,26 +1,31 @@
 <?php 
+	function json_output($content){
+		header("Content-type: aplication/json");
+		echo json_encode($content);
+		die();
+	}
 	function create_file($path){
 		return [
 			"path"=>$path,
-			"lines"=>file($path)
+			"status"=>touch($path)
 		];
 	}
 	function delete_file($path){
 		return [
 			"path"=>$path,
-			"lines"=>file($path)
+			"status"=>unlink($path)
 		];
 	}
 	function create_dir($path){
 		return [
 			"path"=>$path,
-			"lines"=>file($path)
+			"status"=>mkdir($path)
 		];
 	}
 	function delete_dir($path){
 		return [
 			"path"=>$path,
-			"lines"=>file($path)
+			"status"=>rmdir($path)
 		];
 	}
 	function get_file($path){
@@ -43,62 +48,6 @@
 			"path"=>$path
 		];
 	}
-	function show_dir_content($path){
-		$ttt=opendir($path);
-		//var_dump($ttt);
-		$directories=[];
-		$files=[];
-		$current=false;
-		$up=false;
-		while($file=readdir($ttt)){
-			if($file==".."){
-				$up=true;
-			}elseif($file=="."){
-				$current=true;
-			}else{
-				if(is_dir($path."\\".$file)){
-					$directories[]=$file;
-				}else{
-					$files[]=$file;
-				}
-			}
-		}
-		return [
-			'current'=>$current,
-			'parrent'=>$up,
-			'directories'=>$directories,
-			'files'=>$files
-		];
-	}
-	function file_details($path){
-		$out=[];
-		if(file_exists($path)){
-			if(is_file($path)){
-				$out=[
-					"path"=>$path,
-					"status"=>"exist",
-					"type"=>"file",
-					"filesize"=>filesize($path),
-					"mime"=>mime_content_type($path),
-					"md5"=>md5_file($path),
-					"modifyed"=>filemtime($path)
-				];
-			}elseif(is_dir($path)){
-				$out=[
-					"path"=>$path,
-					"status"=>"exist",
-					"type"=>"dir",
-					"filesize"=>filesize($path)
-				];
-			}
-		}else{
-			$out=[
-				"path"=>$path,
-				"status"=>"not_exist"
-			];
-		}
-		return $out;
-	}
 	function sys_details(){
 		return [
 			"SERVER"=>$_SERVER,
@@ -108,18 +57,10 @@
 	if(isset($_GET['mode'])){
 		switch($_GET['mode']){
 			case "explorer":
-				if(isset($_GET['path'])){
-					header("Content-type: aplication/json");
-					echo json_encode(show_dir_content($_GET['path']));
-					die();
-				}
+				include "show-dir-content.php";
 			break;
 			case "file-details":
-				if(isset($_GET['path'])){
-					header("Content-type: aplication/json");
-					echo json_encode(file_details($_GET['path']));
-					die();
-				}
+				include "file-details.php";
 			break;
 			case "system-details":
 				header("Content-type: aplication/json");
@@ -133,7 +74,7 @@
 			break;
 			case "write-file":
 				header("Content-type: aplication/json");
-				echo json_encode(set_file($_GET['path'], $_GET['content']));
+				echo json_encode(set_file($_GET['path'],$_GET['content']));
 				die();
 			break;
 			case "delete-file":
@@ -143,7 +84,7 @@
 			break;
 			case "create-file":
 				header("Content-type: aplication/json");
-				echo json_encode(delete_file($_GET['path']));
+				echo json_encode(create_file($_GET['path']));
 				die();
 			break;
 			case "delete-dir":
@@ -159,7 +100,37 @@
 		}
 	}
 ?>
-
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<style>
+			
+		</style>
+		<script>
+			
+		</script>
+	</head>
+	<body>
+		<header>
+			<h1>Xp-lor-php</h1>
+		</header>
+		<main>
+			<section id="explorer">
+				<div>
+				</div>
+				<div>
+				</div>
+			</section>
+			<section>
+				
+			</section>
+		</main>
+		<footer>
+		
+		</footer>
+	</body>
+</html>
 skrypt usuwanie dodawanie pliku katalogu 
 upload
 grzegorz.sladowski@sltzn.katowice.pl

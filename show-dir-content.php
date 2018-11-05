@@ -1,0 +1,35 @@
+<?php 
+	if(isset($_GET['path'])){
+		$path=show_dir_content($_GET['path']);
+		$ttt=opendir($path);
+		//var_dump($ttt);
+		$directories=[];
+		$files=[];
+		$current=false;
+		$up=false;
+		while($file=readdir($ttt)){
+			if($file==".."){
+				$up=true;
+			}elseif($file=="."){
+				$current=true;
+			}else{
+				if(is_dir($path."\\".$file)){
+					$directories[]=$file;
+				}else{
+					$files[]=$file;
+				}
+			}
+		}
+		closedir($ttt);
+		json_output([
+			'current'=>$current,
+			'parrent'=>$up,
+			'directories'=>$directories,
+			'files'=>$files
+		]);
+	}else{
+		json_output([
+			'error'=>'$_GET["path"] not set!'
+		]);
+	}
+?>
