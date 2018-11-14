@@ -1,0 +1,56 @@
+.explorer-button{
+  border:dashed #800 1px;
+  background: #000;
+  margin-right: 5px;
+  margin-bottom: 2px;
+  padding:5px;
+  color:#f00;
+}
+.explorer-button:hover{
+  border:dotted #fff 1px;
+  background: #400;
+  margin-right: 5px;
+  margin-bottom: 2px;
+  padding:5px;
+  color:#fff;
+}
+.explorer-path-field{
+  color:#f00;
+  background: #000;
+  border:solid #800 1px;
+  margin-right: 5px;
+  margin-bottom: 2px;
+  width:700px;
+  font-size: 18px;
+}
+.explorer-path-field:focus{
+  color:#f88;
+}
+.explorer-button-go{
+  color:#f00;
+  background:#000;
+  border:dashed #800 1px;
+  margin-left: 5px;
+  margin-bottom: 2px;
+  font-size: 18px;
+}
+.explorer-button-go:hover{
+  color:#fff;
+  background:#000;
+  border:dotted #fff 1px;
+  margin-left: 5px;
+  margin-bottom: 2px;
+}
+.explorer-button:hover{
+  border:dotted #fff 1px;
+  background: #400;
+  margin-right: 5px;
+  margin-bottom: 2px;
+  padding:5px;
+  color:#fff;
+}
+.explorer-button:active{
+  background: #888;
+  color:#f00;
+  border:solid #800 1px;
+}
