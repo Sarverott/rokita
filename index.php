@@ -15,7 +15,7 @@
 		<?php include "interface-includes/loading-screen.html"; ?>
 		<div class="container">
 			<header>
-				<h1>Xp-lor-php</h1>
+				<h1>Controll Panel Of New Order</h1>
 				<div class="header-buttons-container">
 					<button class="header-button indoor-link" cardname="explorer">EXPLORER</button>
 					<button class="header-button indoor-link" cardname="system">SYSTEM</button>
