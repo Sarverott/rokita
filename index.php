@@ -1,136 +1,39 @@
-<?php 
-	function json_output($content){
-		header("Content-type: aplication/json");
-		echo json_encode($content);
-		die();
-	}
-	function create_file($path){
-		return [
-			"path"=>$path,
-			"status"=>touch($path)
-		];
-	}
-	function delete_file($path){
-		return [
-			"path"=>$path,
-			"status"=>unlink($path)
-		];
-	}
-	function create_dir($path){
-		return [
-			"path"=>$path,
-			"status"=>mkdir($path)
-		];
-	}
-	function delete_dir($path){
-		return [
-			"path"=>$path,
-			"status"=>rmdir($path)
-		];
-	}
-	function get_file($path){
-		return [
-			"path"=>$path,
-			"lines"=>file($path)
-		];
-	}
-	function set_file($path, $content){
-		$before=filesize($path);
-		$f=fopen($path,"w");
-		fwrite($f,$content);
-		fclose($f);
-		$after=filesize($path);
-		return [
-			"size"=>[
-				"original"=>$before,
-				"new"=>$after
-			],
-			"path"=>$path
-		];
-	}
-	function sys_details(){
-		return [
-			"SERVER"=>$_SERVER,
-			"SYSTEMNAME"=>php_uname()
-		];
-	}
-	if(isset($_GET['mode'])){
-		switch($_GET['mode']){
-			case "explorer":
-				include "show-dir-content.php";
-			break;
-			case "file-details":
-				include "file-details.php";
-			break;
-			case "system-details":
-				header("Content-type: aplication/json");
-				echo json_encode(sys_details($_GET['path']));
-				die();
-			break;
-			case "read-file":
-				header("Content-type: aplication/json");
-				echo json_encode(get_file($_GET['path']));
-				die();
-			break;
-			case "write-file":
-				header("Content-type: aplication/json");
-				echo json_encode(set_file($_GET['path'],$_GET['content']));
-				die();
-			break;
-			case "delete-file":
-				header("Content-type: aplication/json");
-				echo json_encode(delete_file($_GET['path']));
-				die();
-			break;
-			case "create-file":
-				header("Content-type: aplication/json");
-				echo json_encode(create_file($_GET['path']));
-				die();
-			break;
-			case "delete-dir":
-				header("Content-type: aplication/json");
-				echo json_encode(delete_dir($_GET['path']));
-				die();
-			break;
-			case "create-dir":
-				header("Content-type: aplication/json");
-				echo json_encode(create_dir($_GET['path']));
-				die();
-			break;
-		}
-	}
+<?php
+	include "main-proc.php";
 ?>
 <!DOCTYPE html>
 <html>
 	<head>
 		<title></title>
-		<style>
-			
-		</style>
-		<script>
-			
-		</script>
+		<link href="css/main.css" rel="stylesheet">
+		<script src="js/ajax-api-functions.js"></script>
+		<script src="js/header.js"></script>
+		<script src="js/explorer.js"></script>
+		<script src="js/main.js"></script>
 	</head>
 	<body>
-		<header>
-			<h1>Xp-lor-php</h1>
-		</header>
-		<main>
-			<section id="explorer">
-				<div>
+		<?php include "interface-includes/loading-screen.html"; ?>
+		<div class="container">
+			<header>
+				<h1>Xp-lor-php</h1>
+				<div class="header-buttons-container">
+					<button class="header-button indoor-link" cardname="explorer">EXPLORER</button>
+					<button class="header-button indoor-link" cardname="system">SYSTEM</button>
+					<button class="header-button outdoor-link" location="resources/doc.pdf">DOCUMENTATION</button>
+					<button class="header-button indoor-link" cardname="guide">GUIDE</button>
+					<button class="header-button outdoor-link" location="">REPOSITORY</button>
 				</div>
-				<div>
-				</div>
-			</section>
-			<section>
-				
-			</section>
-		</main>
-		<footer>
-		
-		</footer>
+			</header>
+			<main>
+				<?php include "interface-includes/explorer.html"; ?>
+				<?php include "interface-includes/edit.html"; ?>
+				<?php include "interface-includes/system.html"; ?>
+				<?php include "interface-includes/guide.html"; ?>
+			</main>
+			<footer>
+				visit my <a target="_blank" href="http://github.com/Sarverott">GitHub</a>
+			</footer>
+		</div>
 	</body>
 </html>
-skrypt usuwanie dodawanie pliku katalogu 
-upload
 grzegorz.sladowski@sltzn.katowice.pl

@@ -1,0 +1,77 @@
+body{
+  background: #000;
+  color:#fff;
+}
+header h1{
+  text-align: center;
+  font-family: Arial;
+  /*border:1px solid #fff;*/
+}
+header{
+  /*border:1px solid #fff;*/
+  padding:0;
+}
+section{
+  margin:20px;
+}
+footer{
+  position:fixed;
+  bottom:0;
+  left:0;
+  width:100%;
+  border-top:double 1px #fff;
+  text-align: right;
+  z-index:100;
+}
+.current-screen{
+  display:none
+}
+.current-screen.active{
+  display:block;
+}
+.header-buttons-container{
+  padding-left: 30px;
+  padding-right: 30px;
+  border-top:1px solid #fff;
+  /*border:1px solid #fff;*/
+}
+.header-button{
+  background: #000;
+  color:#f00;
+  border:1px solid #800;
+  padding: 3px;
+  margin:5px;
+  cursor: pointer;
+}
+.header-button:hover{
+  background: #800;
+  color:#fff;
+  border:1px solid #800;
+  padding: 3px;
+  margin:5px;
+}
+.container{
+  z-index:100;
+  width:800px;
+  margin:20px auto;
+}
+a{
+  color:#a00;
+}
+a:hover{
+  background: #333;
+  animation-name: wonderfullAnim;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+@keyframes wonderfullAnim {
+  0%{
+    color:#a33;
+  }
+  50%{
+    color:#f00;
+  }
+  100%{
+    color:#a33;
+  }
+}
