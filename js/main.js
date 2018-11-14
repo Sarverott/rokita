@@ -11,11 +11,23 @@ function changeScreen(name){
   }
 }
 
-document.addEventListener("DOMContentLoaded", function(){
-  //console.log("dsads");
-  appStruct.header=new header();
-  appStruct.explorer=new explorer();
-  setTimeout(function(){
-    loadingScreen("hide");
-  },1000);
-});
+
+class appController{
+  constructor(){
+    var controllerHook=
+    document.addEventListener("DOMContentLoaded", function(){
+
+    });
+  }
+  createHeader(){
+    this.header=new header();
+  }
+  createExporer(){
+    this..explorer=new explorer();
+  }
+  hideLoadingScreen(){
+    setTimeout(function(){
+      loadingScreen("hide");
+    },1000);
+  }
+}

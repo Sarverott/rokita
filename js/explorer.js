@@ -10,7 +10,7 @@ class xplorItem{
         explorerHook.gotoPath(this.path);
       break;
       case "file":
-
+        explorerHook.openFile(this.path);
       break;
     }
   }
@@ -21,12 +21,11 @@ class explorer{
     document.getElementByClassName("explorer-button-go")[0].addEventListener("click",function(){
       this.gotoPath(document.getElementByClassName("explorer-path-field")[0].value);
     });
-    
+
   }
   getBasePath(){
     var hook=this;
     makeRequest("index.php?api&command=system&action=base_path", "", function(output){
-      //alert(output);
       var data=JSON.parse(output);
       hook.gotoPath(data.path);
     });
