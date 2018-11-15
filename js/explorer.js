@@ -83,7 +83,7 @@ class explorer{
         this.gotoPath(tmp);
       break;
       case "refresh":
-
+        this.gotoPath(this.currentPath);
       break;
       case "new-file":
 
@@ -102,6 +102,15 @@ class explorer{
     });
   }
   openDir(filename){
+    var separator="";
+    if(this.currentPath.search("/")==-1){
+      separator="\\";
+    }else{
+      separator="/";
+    }
+    this.gotoPath(this.currentPath+separator+filename);
+  }
+  openFile(filename){
     var separator="";
     if(this.currentPath.search("/")==-1){
       separator="\\";
