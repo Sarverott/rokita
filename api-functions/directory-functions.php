@@ -28,7 +28,7 @@ class dir_procesor extends path_procesor{
 			}
 		}
 		closedir($ttt);
-    /*var_dump([
+    /*extra_json_encode([
       "path"=>$this->path,
       "content"=>[
         "directories"=>$directories,
@@ -36,8 +36,8 @@ class dir_procesor extends path_procesor{
         "current"=>$current,
         "up"=>$up
       ]
-    ], 0, 2048);*/
-    return json_encode([
+    ]);*/
+    return extra_json_encode([
       "path"=>$this->path,
       "content"=>[
         "directories"=>$directories,

@@ -1,4 +1,5 @@
 <?php
+	include "extra-functions.php";
 	include "main-proc.php";
 ?>
 <!DOCTYPE html>
