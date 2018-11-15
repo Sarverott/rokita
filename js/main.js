@@ -1,4 +1,4 @@
-var appStruct={};
+
 function changeScreen(name){
   //console.log(name);
   for(var i=0;i<document.getElementsByClassName("current-screen").length;i++){
@@ -11,19 +11,30 @@ function changeScreen(name){
   }
 }
 
+function debugConsoleTitle(content, fontSize){
+  console.log("%c~~~ %c"+content+"%c ~~~", "font-size:"+fontSize+"px", "color:#f00;font-size:"+fontSize+"px", "color:#000;font-size:"+fontSize+"px");
+}
 
 class appController{
   constructor(){
-    var controllerHook=
+    debugConsoleTitle("START APP",20);
+    var controllerHook=this;
     document.addEventListener("DOMContentLoaded", function(){
-
+      debugConsoleTitle("BEG INIT",15);
+      controllerHook.createHeader();
+      controllerHook.createExplorer();
+      changeScreen("explorer");
+      controllerHook.hideLoadingScreen();
+      debugConsoleTitle("END INIT",15);
     });
   }
   createHeader(){
+    debugConsoleTitle("CREATE HEADER",10);
     this.header=new header();
   }
-  createExporer(){
-    this..explorer=new explorer();
+  createExplorer(){
+    debugConsoleTitle("CREATE EXPLORER",10);
+    this.explorer=new explorer();
   }
   hideLoadingScreen(){
     setTimeout(function(){
@@ -31,3 +42,5 @@ class appController{
     },1000);
   }
 }
+
+var appStruct=new appController();
