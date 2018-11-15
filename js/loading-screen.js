@@ -1,9 +1,9 @@
 function orderDataFromGist(resp){
   var data=JSON.parse(resp.response);
   var tmp=document.getElementsByClassName('homesite');
-  console.log(tmp);
+  //console.log(tmp);
   for(var i=0;i<tmp.length;i++){
-    console.log(tmp[i]);
+    //console.log(tmp[i]);
     tmp[i].setAttribute("href", data.website);
   }
 }

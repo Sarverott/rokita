@@ -1,5 +1,6 @@
 class header{
-  constructor(){
+  constructor(controller){
+    this.app=controller;
     var headerButtonsHook;
     var headerHook=this;
     headerButtonsHook=document.getElementsByClassName("indoor-link");

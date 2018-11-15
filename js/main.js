@@ -1,4 +1,3 @@
-
 function changeScreen(name){
   //console.log(name);
   for(var i=0;i<document.getElementsByClassName("current-screen").length;i++){
@@ -10,31 +9,100 @@ function changeScreen(name){
     }
   }
 }
-
 function debugConsoleTitle(content, fontSize){
   console.log("%c~~~ %c"+content+"%c ~~~", "font-size:"+fontSize+"px", "color:#f00;font-size:"+fontSize+"px", "color:#000;font-size:"+fontSize+"px");
 }
-
+function debugConsoleDescription(title,content){
+  console.log("%c"+title+"\n%c"+content, "font-size:15px", "color:#888;font-size:5px");
+}
+/*
+class hotkeyController{
+  constructor(controller){
+    this.app=controller;
+    this.keyListeners={
+      up:[],
+      down:[]
+    };
+    var hook=this;
+    window.onkeypress = function(e){
+      console.log("#KEYPRESS#");
+      for(var i in hook.keyListeners.down){
+        hook.keyListeners.down[i](e.key);
+      }
+    };
+    window.onkeyup = function(e){
+      for(var i in hook.keyListeners.up){
+        hook.keyListeners.up[i](e.key);
+      }
+    };
+  }
+  addListener(funct, event){
+    this.keyListeners[event].push(funct);
+  }
+}
+*/
 class appController{
   constructor(){
+    this.multiselect=false;
+    this.areaselect=false;
     debugConsoleTitle("START APP",20);
     var controllerHook=this;
     document.addEventListener("DOMContentLoaded", function(){
       debugConsoleTitle("BEG INIT",15);
-      controllerHook.createHeader();
-      controllerHook.createExplorer();
+      controllerHook.componentsLoad();
+      //controllerHook.setupHotkeys();
       changeScreen("explorer");
       controllerHook.hideLoadingScreen();
       debugConsoleTitle("END INIT",15);
+      makeRequest("LICENSE", "", function(data){
+        debugConsoleDescription("LICENSE", data);
+      });
     });
   }
+  componentsLoad(){
+    //this.createHotkeyControll();
+    this.createHeader();
+    this.createExplorer();
+  }
+  /*
+  setupHotkeys(){
+    var hook=this;
+    this.hotkeyControll.addListener(function(key){
+      switch(key){
+        case "m":
+          hook.multiselect=true;
+        break;
+        case "a":
+          hook.areaselect=true;
+        break;
+      }
+      console.log(hook.multiselect);
+    },"down");
+    this.hotkeyControll.addListener(function(key){
+      switch(key){
+        case "m":
+          hook.multiselect=false;
+        break;
+        case "a":
+          hook.areaselect=false;
+        break;
+      }
+    },"up");
+  }
+  */
+  /*
+  createHotkeyControll(){
+    debugConsoleTitle("CREATE HOTKEYS",10);
+    this.hotkeyControll=new hotkeyController(this);
+  }
+  */
   createHeader(){
     debugConsoleTitle("CREATE HEADER",10);
-    this.header=new header();
+    this.header=new header(this);
   }
   createExplorer(){
     debugConsoleTitle("CREATE EXPLORER",10);
-    this.explorer=new explorer();
+    this.explorer=new explorer(this);
   }
   hideLoadingScreen(){
     setTimeout(function(){
@@ -42,5 +110,4 @@ class appController{
     },1000);
   }
 }
-
 var appStruct=new appController();

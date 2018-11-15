@@ -1,3 +1,37 @@
+.explorer-item-button.dir{
+  color:#a00;
+}
+.explorer-desc{
+  color:#333;
+}
+.explorer-item-delete{
+  margin-left: 10px;
+  border:dotted #400 1px;
+  color:#aaa;
+  background:#000;
+}
+.explorer-item-delete:hover{
+  border:dashed #400 1px;
+  color:#f00;
+  background:#333;
+}
+.explorer-item-selected td{
+  background: #222;
+}
+.explorer-item td:last-of-type{
+  width:100px;
+}
+.explorer-viewer{
+  font-family: monospace;
+  width:100%;
+}
+.explorer-item td{
+  padding: 2px;
+  border:dashed #000 1px;
+}
+.explorer-item:hover td{
+  border:dashed #888 1px;
+}
 .explorer-button{
   border:dashed #800 1px;
   background: #000;
