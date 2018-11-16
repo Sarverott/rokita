@@ -63,6 +63,7 @@ class appController{
     //this.createHotkeyControll();
     this.createHeader();
     this.createExplorer();
+    this.createEditor();
   }
   /*
   setupHotkeys(){
@@ -96,6 +97,9 @@ class appController{
     this.hotkeyControll=new hotkeyController(this);
   }
   */
+  createEditor(){
+    this.editor=new fileEditor(this);
+  }
   createHeader(){
     debugConsoleTitle("CREATE HEADER",10);
     this.header=new header(this);
@@ -103,6 +107,9 @@ class appController{
   createExplorer(){
     debugConsoleTitle("CREATE EXPLORER",10);
     this.explorer=new explorer(this);
+  }
+  showLoadingScreen(){
+    loadingScreen("show");
   }
   hideLoadingScreen(){
     setTimeout(function(){

@@ -1,16 +1,12 @@
 @import "explorer.css";
+@import "header.css";
 body{
   background: #000;
   color:#fff;
 }
-header h1{
-  text-align: center;
-  font-family: Arial;
-  /*border:1px solid #fff;*/
-}
-header{
-  /*border:1px solid #fff;*/
-  padding:0;
+main{
+  margin-top: 160px;
+  margin-bottom: 100px;
 }
 section{
   margin:20px;
@@ -25,42 +21,43 @@ footer{
   text-align: right;
   z-index:100;
 }
+.edit-filedetails table{
+  width:100%;
+  margin-bottom: 30px;
+}
+.edit-filedetails table td{
+  padding:10px;
+  border-top: solid 1px #444;
+  border-right: solid 1px #444;
+}
+.edit-filename{
+  font-size: 25px;
+  text-align: center;
+  font-family: sans-serif;
+}
+.edit-save{
+  color:white;
+  background: #000;
+  border-top:double 3px #fff;
+  width:100%;
+}
+.edit-save:hover{
+  color:red;
+  background: #000;
+}
+.edit-field{
+  width:100%;
+}
+.edit-content{
+  background: #000;
+  color:#fff;
+  width:100%;
+}
 .current-screen{
   display:none
 }
 .current-screen.active{
   display:block;
-}
-.header-buttons-container{
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-left: 30px;
-  padding-right: 30px;
-  border-top:1px solid #fff;
-  /*border:1px solid #fff;*/
-}
-.header-button{
-  font-size: 22px;
-  background: #000;
-  color:#f00;
-  border:2px dashed #400;
-  padding: 3px;
-  margin:5px;
-  cursor: pointer;
-}
-.header-button:hover{
-  /*background: #800;*/
-  color:#fff;
-  border:1px dotted #888;
-  padding: 9px 4px;
-  margin: 0 5px;
-}
-.header-button:active{
-  background: #fff;
-  color:#800;
-  border:4px solid #f00;
-  padding: 3px;
-  margin:3px;
 }
 .container{
   z-index:100;

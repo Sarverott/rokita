@@ -8,7 +8,7 @@ class file_procesor extends path_procesor{
       "path"=>$this->path,
       "content"=>implode(
         file($this->path),
-        "\n"
+        ""
       )
     ]);
   }

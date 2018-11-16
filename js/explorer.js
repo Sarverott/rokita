@@ -111,13 +111,8 @@ class explorer{
     this.gotoPath(this.currentPath+separator+filename);
   }
   openFile(filename){
-    var separator="";
-    if(this.currentPath.search("/")==-1){
-      separator="\\";
-    }else{
-      separator="/";
-    }
-    this.gotoPath(this.currentPath+separator+filename);
+    this.app.editor.open(filename, this.currentPath);
+    //this.gotoPath(this.currentPath+separator+filename);
   }
   prepareData(data){
     var tmp={};
