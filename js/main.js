@@ -64,6 +64,7 @@ class appController{
     this.createHeader();
     this.createExplorer();
     this.createEditor();
+    this.createNewItemDialog();
   }
   /*
   setupHotkeys(){
@@ -97,7 +98,12 @@ class appController{
     this.hotkeyControll=new hotkeyController(this);
   }
   */
+  createNewItemDialog(){
+    debugConsoleTitle("CREATE NEW ITEM DIALOG",10);
+    this.niDialog=new newItemDialog(this);
+  }
   createEditor(){
+    debugConsoleTitle("CREATE EDITOR",10);
     this.editor=new fileEditor(this);
   }
   createHeader(){

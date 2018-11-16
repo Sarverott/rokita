@@ -12,6 +12,7 @@
 		<script src="js/explorer.js"></script>
 		<script src="js/main.js"></script>
 		<script src="js/file-editor.js"></script>
+		<script src="js/new-item-dialog.js"></script>
 	</head>
 	<body>
 		<?php include "interface-includes/loading-screen.html"; ?>
@@ -33,6 +34,7 @@
 			<main>
 				<?php include "interface-includes/explorer.html"; ?>
 				<?php include "interface-includes/system.html"; ?>
+				<?php include "interface-includes/new-item.html"; ?>
 				<?php include "interface-includes/guide.html"; ?>
 				<?php include "interface-includes/edit.html"; ?>
 			</main>

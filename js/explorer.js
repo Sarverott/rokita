@@ -86,12 +86,62 @@ class explorer{
         this.gotoPath(this.currentPath);
       break;
       case "new-file":
-
+        this.newFileDialog(this.currentPath);
       break;
       case "new-dir":
-
+        this.newDirDialog(this.currentPath);
+      break;
+      case "home-dir":
+        this.getBasePath();
       break;
     }
+  }
+  deleteDir(path){
+    loadingScreen("show");
+    var separator="";
+    if(this.currentPath.search("/")==-1){
+      separator="\\";
+    }else{
+      separator="/";
+    }
+    var hook=this;
+    makeRequest("index.php?api&command=directory&action=delete", "arguments0="+encodeURIComponent(this.currentPath+separator+path), function(output){
+      //alert(output);
+      var data=JSON.parse(output);
+      setTimeout(function(){
+        changeScreen("explorer");
+        hook.gotoPath(hook.currentPath);
+        loadingScreen("hide");
+      },1000);
+    });
+  }
+  deleteFile(path){
+    loadingScreen("show");
+    var separator="";
+    if(this.currentPath.search("/")==-1){
+      separator="\\";
+    }else{
+      separator="/";
+    }
+    var hook=this;
+    makeRequest("index.php?api&command=file&action=delete", "arguments0="+encodeURIComponent(this.currentPath+separator+path), function(output){
+      //alert(output);
+      var data=JSON.parse(output);
+      setTimeout(function(){
+        changeScreen("explorer");
+        hook.gotoPath(hook.currentPath);
+        loadingScreen("hide");
+      },1000);
+    });
+  }
+  openNewItemDialog(path, type){
+    this.app.niDialog.setup(path, type);
+  }
+  newDirDialog(path){
+    this.openNewItemDialog(path, "dir");
+  }
+  newFileDialog(path){
+    this.openNewItemDialog(path, "file");
   }
   getBasePath(){
     var hook=this;
