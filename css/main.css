@@ -88,12 +88,24 @@ footer{
   background:#333;
   border:solid #fff 1px;
 }
+.eval-area{
+  width:100%;
+  color:#fff;
+  background:#333;
+  border:solid #fff 1px;
+}
+.eval-output{
+  background:#fff;
+  margin-top: 20px;
+  border:solid #fff 1px;
+  width:100%;
+}
 .ni-field{
   margin:10px 0;
   border: dotted 1px #f00;
   padding: 5px;
 }
-.ni-create{
+.ni-create, .eval-button{
   width:100%;
   font-size: 15px;
   background: #000;
@@ -101,20 +113,32 @@ footer{
   border: dashed 1px #f00;
   padding: 5px;
 }
-.ni-create:hover{
+.ni-create:hover, .eval-button:hover{
   background: #000;
   color: #fff;
   border: solid 1px #f00;
 }
-.ni-input, #upload-path{
+.ni-input{
   width:80%;
   font-size: 15px;
   background: #000;
   color: #f00;
   border: none;
 }
-.ni-input:focus, #upload-path:focus{
+.ni-input:focus{
   color: #fff;
+}
+#upload-path{
+  color:#f00;
+  background: #000;
+  border:solid #800 1px;
+  margin-right: 5px;
+  margin-bottom: 2px;
+  width:100%;
+  font-size: 18px;
+}
+#upload-path:focus{
+  color:#fff;
 }
 .edit-filedetails table{
   width:100%;

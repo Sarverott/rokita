@@ -1,9 +1,11 @@
 <?php
   class sys_procesor{
     public function execute($command){
-      $out=[];
-      exec($command, $out);
-      return implode("\n",$out);
+      //$out=[];
+      //$ret=0;
+      //exec($command, $out, $ret);
+      //return implode("\n",$out);
+      system($command);
     }
     public function evaluate($code){
       eval($code);

@@ -9,13 +9,13 @@ class uploadFileDialog{
       return true;
     });
     document.getElementById("upload-output").onload=function(){
-      if(!hook.isUploading){
-        hook.app.explorer.gotoPath(hook.path);
-        changeScreen("explorer");
-        setTimeout(function(){
+      setTimeout(function(){
+        if(hook.isUploading){
+          hook.app.explorer.gotoPath(hook.path);
+          changeScreen("explorer");
           loadingScreen("hide");
-        }, 1000);
-      }
+        }
+      }, 1000);
     };
   }
   open(path){

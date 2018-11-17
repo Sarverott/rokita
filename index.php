@@ -27,8 +27,8 @@
 							<button class="header-button indoor-link" cardname="explorer">EXPLORER</button>
 							<button class="header-button indoor-link" cardname="system">SYSTEM</button>
 							<button class="header-button outdoor-link" location="https://drive.google.com/file/d/1yBN6vVjO3HCpFTcwn9rlhhd1JWgvSool/view?usp=sharing">DOCUMENTATION</button>
-							<button class="header-button indoor-link" cardname="guide">GUIDE</button>
-							<button class="header-button outdoor-link" location="http://github.com/Sarverott/rokita">REPOSITORY</button>
+							<button class="header-button outdoor-link" location="http://github.com/Sarverott/rokita">REPO</button>
+							<button class="header-button indoor-link" cardname="settings">SETTINGS</button>
 						</div>
 					</div>
 				</center>
@@ -40,7 +40,7 @@
 				<?php include "interface-includes/server-vars.html"; ?>
 				<?php include "interface-includes/system.html"; ?>
 				<?php include "interface-includes/new-item.html"; ?>
-				<?php include "interface-includes/guide.html"; ?>
+				<?php include "interface-includes/settings.html"; ?>
 				<?php include "interface-includes/edit.html"; ?>
 				<?php include "interface-includes/upload.html"; ?>
 			</main>

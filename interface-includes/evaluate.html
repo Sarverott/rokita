@@ -1,6 +1,8 @@
 <section id="evaluate" class="current-screen" cardname="evaluate">
   <h1 class="section-header">EVALUATE</h1>
-  <textarea name="name" rows="8" cols="80"></textarea>
-  <button></button>
-  <iframe name="eval-area"></iframe>
+  <form action="?api&command=system&action=evaluate" target="eval-area" method="POST">
+    <textarea class="eval-area" name="arguments0" rows="8" cols="80"></textarea>
+    <input class="eval-button" value="EVAL" type="submit">
+  </form>
+  <iframe width="100%" height="600px" name="eval-area" class="eval-output"></iframe>
 </section>

@@ -14,7 +14,7 @@
         $tmp=new sys_procesor();
         switch($_GET['action']){
           case "execute":
-            echo $tmp->execute($_POST['arguments0']);
+            $tmp->execute($_POST['arguments0']);
             die();
           break;
           case "evaluate":
