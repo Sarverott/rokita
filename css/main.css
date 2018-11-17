@@ -65,7 +65,7 @@ footer{
   border:dashed #444 1px;
   padding:10px;
 }
-#system h1, .ni-field, .edit-filename{
+.section-header{
   font-size: 30px;
   font-family:monospace;
   text-align: center;

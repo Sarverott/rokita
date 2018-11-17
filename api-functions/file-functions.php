@@ -30,6 +30,15 @@ class file_procesor extends path_procesor{
       "status"=>"ok"
     ]);
   }
+  public function upload($file){
+    $f=fopen($this->path, "a+");
+    fwrite($f, $content);
+    fclose($f);
+    return json_encode([
+      "path"=>$this->path,
+      "status"=>"ok"
+    ]);
+  }
   public function create(){
     touch($this->path);
     return json_encode([
