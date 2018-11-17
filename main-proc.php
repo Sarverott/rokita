@@ -35,6 +35,10 @@
       case "file":
         $tmp=new file_procesor($_POST['arguments0']);
         switch($_GET['action']){
+          case "upload":
+            echo $tmp->upload($_FILES['uploaded']);
+            die();
+          break;
           case "read":
             json_output($tmp->read());
           break;

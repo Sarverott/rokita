@@ -70,7 +70,7 @@ footer{
   font-family:monospace;
   text-align: center;
 }
-.system-cardlist button{
+.system-cardlist button, .upload-button{
   width:100%;
   margin-top: 10px;
   font-size: 20px;
@@ -78,7 +78,7 @@ footer{
   background:#000;
   border:dashed #f00 1px;
 }
-.system-cardlist button:hover{
+.system-cardlist button:hover, .upload-button:hover{
   color:#fff;
   background:#000;
   border:dotted #fff 1px;
@@ -106,14 +106,14 @@ footer{
   color: #fff;
   border: solid 1px #f00;
 }
-.ni-input{
+.ni-input, #upload-path{
   width:80%;
   font-size: 15px;
   background: #000;
   color: #f00;
   border: none;
 }
-.ni-input:focus{
+.ni-input:focus, #upload-path:focus{
   color: #fff;
 }
 .edit-filedetails table{
@@ -156,6 +156,9 @@ footer{
   z-index:100;
   width:800px;
   margin:20px auto;
+}
+.hideme{
+  display:none;
 }
 a{
   color:#a00;

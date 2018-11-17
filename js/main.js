@@ -66,6 +66,7 @@ class appController{
     this.createEditor();
     this.createNewItemDialog();
     this.createSystem();
+    this.createUpload();
   }
   /*
   setupHotkeys(){
@@ -99,6 +100,10 @@ class appController{
     this.hotkeyControll=new hotkeyController(this);
   }
   */
+  createUpload(){
+    debugConsoleTitle("CREATE UPLOAD",10);
+    this.upload=new uploadFileDialog(this);
+  }
   createSystem(){
     debugConsoleTitle("CREATE SYSTEM",10);
     this.system=new system(this);

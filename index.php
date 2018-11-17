@@ -13,6 +13,7 @@
 		<script src="js/file-editor.js"></script>
 		<script src="js/new-item-dialog.js"></script>
 		<script src="js/system.js"></script>
+		<script src="js/upload-dialog.js"></script>
 		<script src="js/main.js"></script>
 	</head>
 	<body>
@@ -41,6 +42,7 @@
 				<?php include "interface-includes/new-item.html"; ?>
 				<?php include "interface-includes/guide.html"; ?>
 				<?php include "interface-includes/edit.html"; ?>
+				<?php include "interface-includes/upload.html"; ?>
 			</main>
 			<footer>
 				visit my <a target="_blank" href="http://github.com/Sarverott">GitHub</a>

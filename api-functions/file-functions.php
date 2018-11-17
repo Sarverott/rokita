@@ -31,13 +31,17 @@ class file_procesor extends path_procesor{
     ]);
   }
   public function upload($file){
-    $f=fopen($this->path, "a+");
-    fwrite($f, $content);
-    fclose($f);
-    return json_encode([
-      "path"=>$this->path,
-      "status"=>"ok"
-    ]);
+    if(move_uploaded_file($file["tmp_name"],$this->path.basename($file["name"]))) {
+      return json_encode([
+        "path"=>$this->path,
+        "status"=>"ok"
+      ]);
+    }else{
+      return json_encode([
+        "path"=>$this->path,
+        "status"=>"error"
+      ]);
+    }
   }
   public function create(){
     touch($this->path);

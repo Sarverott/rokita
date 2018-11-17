@@ -94,7 +94,13 @@ class explorer{
       case "home-dir":
         this.getBasePath();
       break;
+      case "upload":
+        this.uploadDialog();
+      break;
     }
+  }
+  uploadDialog(){
+    this.app.upload.open(this.currentPath);
   }
   deleteDir(path){
     loadingScreen("show");
