@@ -65,7 +65,7 @@ footer{
   border:dashed #444 1px;
   padding:10px;
 }
-#system h1{
+#system h1, .ni-field, .edit-filename{
   font-size: 30px;
   font-family:monospace;
   text-align: center;
@@ -92,10 +92,6 @@ footer{
   margin:10px 0;
   border: dotted 1px #f00;
   padding: 5px;
-}
-.ni-title{
-  font-size: 30px;
-  text-align: center;
 }
 .ni-create{
   width:100%;
@@ -128,11 +124,6 @@ footer{
   padding:10px;
   border-top: solid 1px #444;
   border-right: solid 1px #444;
-}
-.edit-filename{
-  font-size: 25px;
-  text-align: center;
-  font-family: sans-serif;
 }
 .edit-save{
   color:white;
