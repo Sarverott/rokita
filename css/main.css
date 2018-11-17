@@ -21,6 +21,105 @@ footer{
   text-align: right;
   z-index:100;
 }
+.exec-input{
+  font-family:monospace;
+  background: #000;
+  color:#fff;
+  border: none;
+  width:100%
+}
+.exec-input:empty{
+  border:dashed #400 1px;
+}
+.exec-output{
+  width:100%;
+  font-family:monospace;
+}
+.exec-output div{
+  color:red;
+}
+.exec-run{
+  width:100%;
+  margin-top: 10px;
+  font-size: 20px;
+  color:#f00;
+  background:#000;
+  border:dashed #f00 1px;
+}
+.exec-run:hover{
+  color:#fff;
+  background:#000;
+  border:dotted #fff 1px;
+}
+.exec-run:active{
+  color:#800;
+  background:#333;
+  border:solid #fff 1px;
+}
+.system-info table{
+  margin-top:30px;
+  width:100%;
+}
+.system-info table td{
+  font-family:monospace;
+  border:dashed #444 1px;
+  padding:10px;
+}
+#system h1{
+  font-size: 30px;
+  font-family:monospace;
+  text-align: center;
+}
+.system-cardlist button{
+  width:100%;
+  margin-top: 10px;
+  font-size: 20px;
+  color:#f00;
+  background:#000;
+  border:dashed #f00 1px;
+}
+.system-cardlist button:hover{
+  color:#fff;
+  background:#000;
+  border:dotted #fff 1px;
+}
+.system-cardlist button:active{
+  color:#800;
+  background:#333;
+  border:solid #fff 1px;
+}
+.ni-field{
+  margin:10px 0;
+  border: dotted 1px #f00;
+  padding: 5px;
+}
+.ni-title{
+  font-size: 30px;
+  text-align: center;
+}
+.ni-create{
+  width:100%;
+  font-size: 15px;
+  background: #000;
+  color: #f00;
+  border: dashed 1px #f00;
+  padding: 5px;
+}
+.ni-create:hover{
+  background: #000;
+  color: #fff;
+  border: solid 1px #f00;
+}
+.ni-input{
+  width:80%;
+  font-size: 15px;
+  background: #000;
+  color: #f00;
+  border: none;
+}
+.ni-input:focus{
+  color: #fff;
+}
 .edit-filedetails table{
   width:100%;
   margin-bottom: 30px;
@@ -37,12 +136,15 @@ footer{
 }
 .edit-save{
   color:white;
+  padding:10px;
+  font-size: 15px;
   background: #000;
-  border-top:double 3px #fff;
+  border:dashed 3px #fff;
   width:100%;
 }
 .edit-save:hover{
   color:red;
+  border:dotted 3px #f00;
   background: #000;
 }
 .edit-field{

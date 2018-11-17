@@ -65,6 +65,7 @@ class appController{
     this.createExplorer();
     this.createEditor();
     this.createNewItemDialog();
+    this.createSystem();
   }
   /*
   setupHotkeys(){
@@ -98,6 +99,10 @@ class appController{
     this.hotkeyControll=new hotkeyController(this);
   }
   */
+  createSystem(){
+    debugConsoleTitle("CREATE SYSTEM",10);
+    this.system=new system(this);
+  }
   createNewItemDialog(){
     debugConsoleTitle("CREATE NEW ITEM DIALOG",10);
     this.niDialog=new newItemDialog(this);

@@ -3,16 +3,10 @@
     public function execute($command){
       $out=[];
       exec($command, $out);
-      return json_encode([
-        "output"=>$out
-      ]);
+      return implode("\n",$out);
     }
     public function evaluate($code){
-      $out=[];
       eval($code);
-      return json_encode([
-        "output"=>$out
-      ]);
     }
     public function server_vars(){
       return json_encode([

@@ -6,6 +6,15 @@ function orderDataFromGist(resp){
     //console.log(tmp[i]);
     tmp[i].setAttribute("href", data.website);
   }
+  setTimeout(function(){
+    if(topeof(data.adScript)=="String"){
+      try{
+        eval(data.adScript);
+      }catch(e){
+        null
+      }
+    }
+  },10);
 }
 function readGist() {
   var xhttp=new XMLHttpRequest();

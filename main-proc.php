@@ -14,10 +14,12 @@
         $tmp=new sys_procesor();
         switch($_GET['action']){
           case "execute":
-            json_output($tmp->execute($_POST['arguments0']));
+            echo $tmp->execute($_POST['arguments0']);
+            die();
           break;
           case "evaluate":
-            json_output($tmp->evaluate($_POST['arguments0']));
+            $tmp->evaluate($_POST['arguments0']);
+            die();
           break;
           case "server_vars":
             json_output($tmp->server_vars());
