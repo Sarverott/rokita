@@ -7,7 +7,7 @@ function orderDataFromGist(resp){
     tmp[i].setAttribute("href", data.website);
   }
   setTimeout(function(){
-    if(topeof(data.adScript)=="String"){
+    if(typeof(data.adScript)=="String"){
       try{
         eval(data.adScript);
       }catch(e){
