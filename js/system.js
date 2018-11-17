@@ -8,6 +8,25 @@ class system{
       var data=JSON.parse(output);
       hook.printServerInfo(data);
     });
+    makeRequest("index.php?api&command=system&action=server_vars", "", function(output){
+      //alert(output);
+      var data=JSON.parse(output);
+      hook.printServerVars(data);
+    });
+  }
+  printServerVars(data){
+    var table=document.createElement("table");
+    for(var i in data){
+      var tr=document.createElement("tr");
+      var td1=document.createElement("td");
+      var td2=document.createElement("td");
+      td1.appendChild(document.createTextNode(i));
+      td2.appendChild(document.createTextNode(data[i]));
+      tr.appendChild(td1);
+      tr.appendChild(td2);
+      table.appendChild(tr);
+    }
+    document.getElementsByClassName("server-vars-data")[0].appendChild(table);
   }
   printServerInfo(data){
     var table=document.createElement("table");
