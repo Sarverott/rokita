@@ -56,14 +56,21 @@ footer{
   background:#333;
   border:solid #fff 1px;
 }
-.system-info table{
+.system-info table, .server-vars-data table{
   margin-top:30px;
   width:100%;
+  max-width: 800px;
+  word-wrap: break-word;
 }
-.system-info table td{
+.system-info table td, .server-vars-data table td{
   font-family:monospace;
   border:dashed #444 1px;
   padding:10px;
+
+}
+.server-vars-data table td div{
+  max-width: 650px;
+  word-wrap: break-word;
 }
 .section-header{
   font-size: 30px;

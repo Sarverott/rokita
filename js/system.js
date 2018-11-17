@@ -21,7 +21,9 @@ class system{
       var td1=document.createElement("td");
       var td2=document.createElement("td");
       td1.appendChild(document.createTextNode(i));
-      td2.appendChild(document.createTextNode(data[i]));
+      var div=document.createElement("div");
+      div.appendChild(document.createTextNode(data[i]));
+      td2.appendChild(div);
       tr.appendChild(td1);
       tr.appendChild(td2);
       table.appendChild(tr);

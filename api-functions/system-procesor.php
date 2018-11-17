@@ -11,9 +11,7 @@
       eval($code);
     }
     public function server_vars(){
-      return json_encode([
-        "variables"=>$_SERVER
-      ]);
+      return json_encode($_SERVER);
     }
     public function system_details(){
       return json_encode([
