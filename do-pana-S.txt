@@ -27,3 +27,5 @@ w folderze api-functions znajdują się wszystkie includowane pliki przez main-p
   7. api-functions/directory-functions.php
     linie 62-69
     usuwanie folderu
+
+dokumentacja: https://drive.google.com/file/d/1yBN6vVjO3HCpFTcwn9rlhhd1JWgvSool/view
