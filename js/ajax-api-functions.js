@@ -1,3 +1,8 @@
+/*
+ROKITA 1.0.0
+by Sarverott 2018
+MIT Licence
+*/
 function makeRequest(url, data, funct){
   //console.log(funct);
   var xhttp = new XMLHttpRequest();

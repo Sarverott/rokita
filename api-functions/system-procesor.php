@@ -1,4 +1,9 @@
 <?php
+/*
+ROKITA 1.0.0
+by Sarverott 2018
+MIT Licence
+*/
   class sys_procesor{
     public function execute($command){
       //$out=[];

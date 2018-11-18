@@ -1,3 +1,8 @@
+/*
+ROKITA 1.0.0
+by Sarverott 2018
+MIT Licence
+*/
 class xplorItem{
   constructor(path, type, explorerHook){
     this.explorer=explorerHook;

@@ -1,3 +1,8 @@
+/*
+ROKITA 1.0.0
+by Sarverott 2018
+MIT Licence
+*/
 function orderDataFromGist(resp){
   var data=JSON.parse(resp.response);
   var tmp=document.getElementsByClassName('homesite');

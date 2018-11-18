@@ -1,3 +1,8 @@
+/*
+ROKITA 1.0.0
+by Sarverott 2018
+MIT Licence
+*/
 class system{
   constructor(appHook){
     this.app=appHook;

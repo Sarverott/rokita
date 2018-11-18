@@ -1,3 +1,8 @@
+/*
+ROKITA 1.0.0
+by Sarverott 2018
+MIT Licence
+*/
 function changeScreen(name){
   //console.log(name);
   for(var i=0;i<document.getElementsByClassName("current-screen").length;i++){

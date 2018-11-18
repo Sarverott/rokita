@@ -1,4 +1,9 @@
 <?php
+/*
+ROKITA 1.0.0
+by Sarverott 2018
+MIT Licence
+*/
 require_once("path-procesor.php");
 class dir_procesor extends path_procesor{
   //public function __toString(){

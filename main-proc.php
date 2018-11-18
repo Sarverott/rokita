@@ -1,4 +1,9 @@
 <?php
+/*
+ROKITA 1.0.0
+by Sarverott 2018
+MIT Licence
+*/
   //include "extra-functions.php";
   include "api-functions/directory-functions.php";
   include "api-functions/file-functions.php";

@@ -1,5 +1,10 @@
 <?php
-  function isAssoc($arr){
+/*
+ROKITA 1.0.0
+by Sarverott 2018
+MIT Licence
+*/
+  function is_ass($arr){
     if(array()===$arr)return false;
     return array_keys($arr)!==range(0,count($arr)-1);
   }
@@ -17,7 +22,7 @@
           }
         break;
         case "array":
-          if(isAssoc($arr)){
+          if(is_ass($arr)){
             $tmp="{";
               $first=true;
             foreach($arr as $k=>$v){
