@@ -15,7 +15,8 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title></title>
+		<title>ROKITA</title>
+		<meta charset="utf-8">
 		<link href="css/main.css" rel="stylesheet">
 		<script src="js/ajax-api-functions.js"></script>
 		<script src="js/header.js"></script>
