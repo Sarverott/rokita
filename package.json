@@ -1,0 +1,28 @@
+{
+  "name": "rokita",
+  "version": "2.0.0",
+  "description": "Newer controll panel of new order",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test-run.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Sarverott/Rokita.git"
+  },
+  "keywords": [
+    "rokita",
+    "sarverott",
+    "sett",
+    "new",
+    "order",
+    "controll",
+    "panel"
+  ],
+  "author": "Sett Sarverott",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Sarverott/Rokita/issues"
+  },
+  "homepage": "https://github.com/Sarverott/Rokita#readme"
+}
