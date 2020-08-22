@@ -5,8 +5,15 @@ const http=require("http"),
   os=require("os"),
   child_process=require("child_process")
 
-class RokitaServer{
+class Rokita_server{
   constructor(){
-    
+
   }
+  static CREATETHREAD(){
+
+  }
+
+}
+class Rokita_file_manager{
+
 }
