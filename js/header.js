@@ -1,9 +1,9 @@
 /*
-ROKITA 1.0.0
-by Sarverott 2018
+ROKITA 1.0.1
+by Sarverott 2020
 MIT Licence
 */
-class header{
+class RokitaHeader{
   constructor(controller){
     this.app=controller;
     var headerButtonsHook;

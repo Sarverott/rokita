@@ -1,11 +1,11 @@
 <?php
 /*
-ROKITA 1.0.0
-by Sarverott 2018
+ROKITA 1.0.2
+by Sarverott 2020
 MIT Licence
 */
 require_once("path-procesor.php");
-class file_procesor extends path_procesor{
+class Rokita_file_procesor extends Rokita_path_procesor{
   public function read(){
     if(!file_exists($this->path)) throw "file_not_exist";
     if(!is_file($this->path)) throw "path_to_nonfile_object";
@@ -36,7 +36,9 @@ class file_procesor extends path_procesor{
     ]);
   }
   public function upload($file){
-    if(move_uploaded_file($file["tmp_name"],$this->path.basename($file["name"]))) {
+    if(move_uploaded_file(
+      $file["tmp_name"],$this->path.basename($file["name"])
+    )){
       return json_encode([
         "path"=>$this->path,
         "status"=>"ok"

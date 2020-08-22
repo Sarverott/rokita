@@ -1,6 +1,6 @@
 /*
-ROKITA 1.0.0
-by Sarverott 2018
+ROKITA 1.0.1
+by Sarverott 2020
 MIT Licence
 */
 function changeScreen(name){
@@ -46,7 +46,7 @@ class hotkeyController{
   }
 }
 */
-class appController{
+class RokitaAppController{
   constructor(){
     this.multiselect=false;
     this.areaselect=false;
@@ -107,27 +107,27 @@ class appController{
   */
   createUpload(){
     debugConsoleTitle("CREATE UPLOAD",10);
-    this.upload=new uploadFileDialog(this);
+    this.upload=new RokitaUploadFileDialog(this);
   }
   createSystem(){
     debugConsoleTitle("CREATE SYSTEM",10);
-    this.system=new system(this);
+    this.system=new RokitaSystem(this);
   }
   createNewItemDialog(){
     debugConsoleTitle("CREATE NEW ITEM DIALOG",10);
-    this.niDialog=new newItemDialog(this);
+    this.niDialog=new RokitaNewItemDialog(this);
   }
   createEditor(){
     debugConsoleTitle("CREATE EDITOR",10);
-    this.editor=new fileEditor(this);
+    this.editor=new RokitaFileEditor(this);
   }
   createHeader(){
     debugConsoleTitle("CREATE HEADER",10);
-    this.header=new header(this);
+    this.header=new RokitaHeader(this);
   }
   createExplorer(){
     debugConsoleTitle("CREATE EXPLORER",10);
-    this.explorer=new explorer(this);
+    this.explorer=new RokitaExplorer(this);
   }
   showLoadingScreen(){
     loadingScreen("show");
@@ -138,4 +138,4 @@ class appController{
     },1000);
   }
 }
-var appStruct=new appController();
+var appStruct=new RokitaAppController();

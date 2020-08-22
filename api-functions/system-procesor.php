@@ -1,10 +1,10 @@
 <?php
 /*
-ROKITA 1.0.0
-by Sarverott 2018
+ROKITA 1.0.2
+by Sarverott 2020
 MIT Licence
 */
-  class sys_procesor{
+  class Rokita_sys_procesor{
     public function execute($command){
       //$out=[];
       //$ret=0;

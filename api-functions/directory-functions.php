@@ -1,11 +1,11 @@
 <?php
 /*
-ROKITA 1.0.0
-by Sarverott 2018
+ROKITA 1.0.2
+by Sarverott 2020
 MIT Licence
 */
 require_once("path-procesor.php");
-class dir_procesor extends path_procesor{
+class Rokita_dir_procesor extends Rokita_path_procesor{
   //public function __toString(){
 
   public function details(){

@@ -1,16 +1,22 @@
 /*
-ROKITA 1.0.0
-by Sarverott 2018
+ROKITA 1.0.1
+by Sarverott 2020
 MIT Licence
 */
-class xplorItem{
+class RokitaXplorItem{
   constructor(path, type, explorerHook){
     this.explorer=explorerHook;
     this.filetype=type;
     this.path=path;
     this.elements=null;
   }
-  addListeners(itemContainer, itemElement, deleteButton, detailsButton=null, editButton=null){
+  addListeners(
+    itemContainer,
+    itemElement,
+    deleteButton,
+    detailsButton=null,
+    editButton=null
+  ){
     var hook=this;
     this.elements={
       itemContainer:itemContainer,
@@ -58,15 +64,20 @@ class xplorItem{
     }
   }
 }
-class explorer{
+class RokitaExplorer{
   constructor(controller){
     this.app=controller;
     this.selected=[];
     this.getBasePath();
     var hook=this;
-    document.getElementsByClassName("explorer-button-go")[0].addEventListener("click",function(){
-      hook.gotoPath(document.getElementsByClassName("explorer-path-field")[0].value);
-    });
+    document.getElementsByClassName("explorer-button-go")[0].addEventListener(
+      "click",
+      function(){
+        hook.gotoPath(
+          document.getElementsByClassName("explorer-path-field")[0].value
+        );
+      }
+    );
     var explorerBurttons=document.getElementsByClassName('explorer-button');
     for(var i=0;i<explorerBurttons.length;i++){
       explorerBurttons[i].addEventListener("click",function(){
@@ -116,15 +127,19 @@ class explorer{
       separator="/";
     }
     var hook=this;
-    makeRequest("index.php?api&command=directory&action=delete", "arguments0="+encodeURIComponent(this.currentPath+separator+path), function(output){
-      //alert(output);
-      var data=JSON.parse(output);
-      setTimeout(function(){
-        changeScreen("explorer");
-        hook.gotoPath(hook.currentPath);
-        loadingScreen("hide");
-      },1000);
-    });
+    makeRequest(
+      "index.php?api&command=directory&action=delete",
+      "arguments0="+encodeURIComponent(this.currentPath+separator+path),
+      function(output){
+        //alert(output);
+        var data=JSON.parse(output);
+        setTimeout(function(){
+          changeScreen("explorer");
+          hook.gotoPath(hook.currentPath);
+          loadingScreen("hide");
+        },1000);
+      }
+    );
   }
   deleteFile(path){
     loadingScreen("show");
@@ -135,15 +150,19 @@ class explorer{
       separator="/";
     }
     var hook=this;
-    makeRequest("index.php?api&command=file&action=delete", "arguments0="+encodeURIComponent(this.currentPath+separator+path), function(output){
-      //alert(output);
-      var data=JSON.parse(output);
-      setTimeout(function(){
-        changeScreen("explorer");
-        hook.gotoPath(hook.currentPath);
-        loadingScreen("hide");
-      },1000);
-    });
+    makeRequest(
+      "index.php?api&command=file&action=delete",
+      "arguments0="+encodeURIComponent(this.currentPath+separator+path),
+      function(output){
+        //alert(output);
+        var data=JSON.parse(output);
+        setTimeout(function(){
+          changeScreen("explorer");
+          hook.gotoPath(hook.currentPath);
+          loadingScreen("hide");
+        },1000);
+      }
+    );
   }
   openNewItemDialog(path, type){
     this.app.niDialog.setup(path, type);
@@ -156,11 +175,15 @@ class explorer{
   }
   getBasePath(){
     var hook=this;
-    makeRequest("index.php?api&command=system&action=base_path", "", function(output){
-      //console.log(output);
-      var data=JSON.parse(output);
-      hook.gotoPath(data.path);
-    });
+    makeRequest(
+      "index.php?api&command=system&action=base_path",
+      "",
+      function(output){
+        //console.log(output);
+        var data=JSON.parse(output);
+        hook.gotoPath(data.path);
+      }
+    );
   }
   openDir(filename){
     var separator="";
@@ -180,10 +203,14 @@ class explorer{
     tmp.items=[];
     this.currentPath=data.path;
     for(var i=0;i<data.content.directories.length;i++){
-      tmp.items.push(new xplorItem(data.content.directories[i],"dir",this));
+      tmp.items.push(
+        new RokitaXplorItem(data.content.directories[i],"dir",this)
+      );
     }
     for(var i=0;i<data.content.files.length;i++){
-      tmp.items.push(new xplorItem(data.content.files[i],"file",this));
+      tmp.items.push(
+        new RokitaXplorItem(data.content.files[i],"file",this)
+      );
     }
     tmp.currentDir=data.content.current;
     tmp.parrentDir=data.content.up;
@@ -192,12 +219,16 @@ class explorer{
   gotoPath(path){
     document.getElementsByClassName("explorer-path-field")[0].value=path;
     var explorerHook=this;
-    makeRequest("index.php?api&command=directory&action=ls", "arguments0="+encodeURIComponent(path), function(output){
-      //alert(output);
-      var data=JSON.parse(output);
-      explorerHook.prepareData(data);
-      explorerHook.setupView();
-    });
+    makeRequest(
+      "index.php?api&command=directory&action=ls",
+      "arguments0="+encodeURIComponent(path),
+      function(output){
+        //alert(output);
+        var data=JSON.parse(output);
+        explorerHook.prepareData(data);
+        explorerHook.setupView();
+      }
+    );
   }
   selectItem(hook){
     console.log("select");
@@ -209,15 +240,23 @@ class explorer{
   }
   markSelected(){
     for(var i in this.workArea.items){
-      this.workArea.items[i].elements.itemContainer.setAttribute("class", "explorer-item");
+      this.workArea.items[i].elements.itemContainer.setAttribute(
+        "class",
+        "explorer-item"
+      );
     }
     for(var i in this.selected){
-      this.selected[i].elements.itemContainer.setAttribute("class", "explorer-item explorer-item-selected");
+      this.selected[i].elements.itemContainer.setAttribute(
+        "class",
+        "explorer-item explorer-item-selected"
+      );
     }
   }
   setupView(){
-    while(document.getElementsByClassName("explorer-view")[0].hasChildNodes()) {
-      document.getElementsByClassName("explorer-view")[0].removeChild(document.getElementsByClassName("explorer-view")[0].firstChild);
+    while(document.getElementsByClassName("explorer-view")[0].hasChildNodes()){
+      document.getElementsByClassName("explorer-view")[0].removeChild(
+        document.getElementsByClassName("explorer-view")[0].firstChild
+      );
     }
     var table=document.createElement("table");
     table.setAttribute("class", "explorer-viewer");

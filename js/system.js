@@ -1,9 +1,9 @@
 /*
-ROKITA 1.0.0
+ROKITA 1.0.1
 by Sarverott 2018
 MIT Licence
 */
-class system{
+class RokitaSystem{
   constructor(appHook){
     this.app=appHook;
     this.addButtonListeners();

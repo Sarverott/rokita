@@ -1,10 +1,10 @@
 <?php
 /*
-ROKITA 1.0.0
-by Sarverott 2018
+ROKITA 1.0.2
+by Sarverott 2020
 MIT Licence
 */
-class path_procesor{
+class Rokita_path_procesor{
   public $path;
   public function __construct($path){
     if(!trim($path)) throw new Exception("path_empty");

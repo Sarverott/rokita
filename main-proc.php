@@ -1,7 +1,7 @@
 <?php
 /*
-ROKITA 1.0.0
-by Sarverott 2018
+ROKITA 1.0.2
+by Sarverott 2020
 MIT Licence
 */
   //include "extra-functions.php";
@@ -16,7 +16,7 @@ MIT Licence
   if(isset($_GET['api'])){
     switch($_GET['command']){
       case "system":
-        $tmp=new sys_procesor();
+        $tmp=new Rokita_sys_procesor();
         switch($_GET['action']){
           case "execute":
             $tmp->execute($_POST['arguments0']);
@@ -38,7 +38,7 @@ MIT Licence
         }
       break;
       case "file":
-        $tmp=new file_procesor($_POST['arguments0']);
+        $tmp=new Rokita_file_procesor($_POST['arguments0']);
         switch($_GET['action']){
           case "upload":
             echo $tmp->upload($_FILES['uploaded']);
@@ -67,7 +67,7 @@ MIT Licence
       break;
       case "directory":
         //var_dump($_POST['arguments0']);
-        $tmp=new dir_procesor($_POST['arguments0']);
+        $tmp=new Rokita_dir_procesor($_POST['arguments0']);
         switch($_GET['action']){
           case "ls":
             //json_output((String)$tmp);

@@ -1,15 +1,18 @@
 /*
-ROKITA 1.0.0
-by Sarverott 2018
+ROKITA 1.0.1
+by Sarverott 2020
 MIT Licence
 */
-class newItemDialog{
+class RokitaNewItemDialog{
   constructor(appHook){
     this.app=appHook;
     var hook=this;
-    document.getElementsByClassName("ni-create")[0].addEventListener("click", function(){
-      hook.create();
-    });
+    document.getElementsByClassName("ni-create")[0].addEventListener(
+      "click",
+      function(){
+        hook.create();
+      }
+    );
   }
   setup(path, type){
     this.path=path;
@@ -23,26 +26,38 @@ class newItemDialog{
     var hook=this;
     switch(this.type){
       case "dir":
-      makeRequest("index.php?api&command=directory&action=create", "arguments0="+encodeURIComponent(document.getElementsByClassName("ni-input")[0].value), function(output){
-        //console.log(output);
-        var data=JSON.parse(output);
-        setTimeout(function(){
-          changeScreen("explorer");
-          hook.app.explorer.gotoPath(hook.path);
-          loadingScreen("hide");
-        },1000);
-      });
+      makeRequest(
+        "index.php?api&command=directory&action=create",
+        "arguments0="+encodeURIComponent(
+          document.getElementsByClassName("ni-input")[0].value
+        ),
+        function(output){
+          //console.log(output);
+          var data=JSON.parse(output);
+          setTimeout(function(){
+            changeScreen("explorer");
+            hook.app.explorer.gotoPath(hook.path);
+            loadingScreen("hide");
+          },1000);
+        }
+      );
       break;
       case "file":
-      makeRequest("index.php?api&command=file&action=create", "arguments0="+encodeURIComponent(document.getElementsByClassName("ni-input")[0].value), function(output){
-        //console.log(output);
-        var data=JSON.parse(output);
-        setTimeout(function(){
-          changeScreen("explorer");
-          hook.app.explorer.gotoPath(hook.path);
-          loadingScreen("hide");
-        },1000);
-      });
+      makeRequest(
+        "index.php?api&command=file&action=create",
+        "arguments0="+encodeURIComponent(
+          document.getElementsByClassName("ni-input")[0].value
+        ),
+        function(output){
+          //console.log(output);
+          var data=JSON.parse(output);
+          setTimeout(function(){
+            changeScreen("explorer");
+            hook.app.explorer.gotoPath(hook.path);
+            loadingScreen("hide");
+          },1000);
+        }
+      );
       break;
     }
   }
