@@ -19,4 +19,3 @@ Programm to manage server utilities. Based on API written in PHP, using AJAX to 
 
 ### Links
 - [documantation](https://drive.google.com/file/d/1yBN6vVjO3HCpFTcwn9rlhhd1JWgvSool/view)
-- [old project](https://github.com/Sarverott/CPoNO)
