@@ -23,3 +23,7 @@ toolkit for server administration, webserves's post-exploitation actions and to 
 - [Docker image repository](https://hub.docker.com/r/sarverott/rokita)
 - [Latest documantation](https://drive.google.com/file/d/1yBN6vVjO3HCpFTcwn9rlhhd1JWgvSool/view)
 - [Old release v1.0.0 release](https://github.com/Sarverott/rokita/archive/refs/tags/1.0.zip)
+
+#### License
+
+released on terms of [MIT license](./LICENSE).
