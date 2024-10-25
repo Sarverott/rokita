@@ -9,5 +9,8 @@
             "email": "sarverott@gmail.com"
         }
     ],
-    "require": {}
+    "require": {},
+    "scripts": {
+        "start-server": "php -S localhost:8000"
+    }
 }
