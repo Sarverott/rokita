@@ -1,6 +1,6 @@
 <?php
 /*
-ROKITA 1.0.0
+ROKITA 1.0.1
 by Sarverott 2018
 MIT Licence
 */
@@ -12,8 +12,8 @@ class file_procesor extends path_procesor{
     return json_encode([
       "path"=>$this->path,
       "content"=>implode(
-        file($this->path),
-        ""
+        "",
+        file($this->path)
       )
     ]);
   }

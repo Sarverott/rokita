@@ -1,6 +1,6 @@
 <?php
 /*
-ROKITA 1.0.0
+ROKITA 1.0.1
 by Sarverott 2018
 MIT Licence
 */
@@ -25,9 +25,9 @@ MIT Licence
     }
     public function base_path(){
       $tmp=$_SERVER['SCRIPT_FILENAME'];
-      $tmp=str_replace("/", "\\", $tmp);
+      //$tmp=str_replace("/", "\\", $tmp);
       //var_dump($tmp);
-      $tmp=substr($tmp, 0, strrpos($tmp, "\\"));
+      $tmp=substr($tmp, 0, strrpos($tmp, "/"));
       return json_encode([
         "path"=>$tmp
       ]);
