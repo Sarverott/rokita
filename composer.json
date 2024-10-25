@@ -11,6 +11,6 @@
     ],
     "require": {},
     "scripts": {
-        "start-server": "php -S localhost:8000 -t app/"
+        "run-server": "php -S localhost:8000 -t app/"
     }
 }
