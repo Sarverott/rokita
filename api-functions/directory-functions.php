@@ -1,6 +1,6 @@
 <?php
 /*
-ROKITA 1.0.1
+ROKITA 1.0.2
 by Sarverott 2018
 MIT Licence
 */
@@ -25,7 +25,7 @@ class dir_procesor extends path_procesor{
 			}elseif($file=="."){
 				$current=true;
 			}else{
-				if(is_dir($this->path."/".$file)){
+				if(is_dir($this->path.DIRECTORY_SEPARATOR.$file)){
 					$directories[]=$file;
 				}else{
 					$files[]=$file;
