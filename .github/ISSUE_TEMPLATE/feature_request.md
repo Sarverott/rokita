@@ -1,8 +1,8 @@
 ---
 name: Feature request
-about: Suggest an idea for this project
+about: Suggest an idea for this project ヽ(☆▽☆)ﾉ  Maybe your proposals are that important missing thing, without witch Rokita can't performing its mission! Σ(°ロ°) 
 title: ''
-labels: ''
+labels: 'feature'
 assignees: ''
 
 ---
