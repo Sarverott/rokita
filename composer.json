@@ -11,6 +11,24 @@
     ],
     "require": {},
     "scripts": {
-        "run-server": "php -S localhost:8000 -t app/"
+        "local-serve": [
+            "echo ### WARNING: this is localhost limited server (non-public) ###",
+            "php -S localhost:8000 -t app/"
+        ],
+        "careless-serve": [
+            "echo ### IP ADDRESS ###",
+            "ip a",
+            "echo ### SERVER START ###",
+            "php -S 0.0.0.0:8000 -t app/"
+        ],
+        "build-dock": [
+            "echo '### ROKITA's DOCKER CONTAINER BUILDING ###'",
+            "docker build . -t rokita"
+        ],
+        "run-dock": [
+            "echo '### ROKITA's DOCKER CONTAINER LOUNCH ###'",
+            "docker run rokita"
+        ],
+        "show-dock":"docker ps | grep rokita"
     }
 }
