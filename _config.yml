@@ -1,1 +1,22 @@
-theme: jekyll-theme-hacker
+title: Rokita 
+
+author: Sett Sarverott
+
+navbar-links:
+  About project: "https://github.com/Sarverott/rokita"
+  Other projects: "https://sarverott.github.io/"
+  Author's home: "https://sarverott.com/"
+
+avatar: https://avatars.githubusercontent.com/Sarverott
+
+round-avatar: true
+
+social-network-links:
+  email: "sarverott@gmail.com"
+  facebook: sarverott
+  github: sarverott
+  twitter: sarverott
+  youtube: "@sarverott"
+  reddit: sarverott
+  instagram: sarverott
+  discord: "sarverott"
