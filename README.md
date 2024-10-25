@@ -1,5 +1,9 @@
 # ROKITA
 
+[![PHP Composer](https://github.com/Sarverott/rokita/actions/workflows/php.yml/badge.svg)](https://github.com/Sarverott/rokita/actions/workflows/php.yml)
+
+---
+
 Programm to manage server utilities. Based on API written in PHP, using AJAX to interactions
 
 ### Avaible functions
