@@ -1,6 +1,6 @@
 # ROKITA
 
-[![PHP Composer](https://github.com/Sarverott/rokita/actions/workflows/php.yml/badge.svg)](https://github.com/Sarverott/rokita/actions/workflows/php.yml)
+[![PHP Composer](https://github.com/Sarverott/rokita/actions/workflows/php.yml/badge.svg?branch=master)](https://github.com/Sarverott/rokita/actions/workflows/php.yml)
 
 ---
 
