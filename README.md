@@ -1,26 +1,25 @@
-# ROKITA
+# ROKITA v.1.1.0
+> [Sett Sarverott](https://sarverott.github.io) @ 2018-2024
 
-[![PHP Composer](https://github.com/Sarverott/rokita/actions/workflows/php.yml/badge.svg?branch=master)](https://github.com/Sarverott/rokita/actions/workflows/php.yml)
+[![PHP Composer test](https://github.com/Sarverott/rokita/actions/workflows/php.yml/badge.svg?branch=master)](https://github.com/Sarverott/rokita/actions/workflows/php.yml)
+![Docker image Pulls](https://img.shields.io/docker/pulls/sarverott/rokita)
+![all Downloads on GitHub](https://img.shields.io/github/downloads/sarverott/rokita/total)
 
 ---
 
-Programm to manage server utilities. Based on API written in PHP, using AJAX to interactions
+toolkit for server administration, webserves's post-exploitation actions and to make quick fixes or trouble-making machines accessible. 
 
-### Avaible functions
-- create file
-- create dir
-- delete file
-- delete dir
-- read file
-- edit file
-- upload file
-- show dir content
-- execute shell
-- evaluate PHP code
-- explore server's filesystem
-- read system info
-- read server variables
+---
+
+### Currently available functions
+- interactive file system explorer
+- file editor with detailed information printing
+- command execution with printing output
+
+---
 
 ### Links
-- [documantation](https://drive.google.com/file/d/1yBN6vVjO3HCpFTcwn9rlhhd1JWgvSool/view)
-- [packed into zip v1.0 release](https://github.com/Sarverott/rokita/archive/refs/tags/1.0.zip)
+- [Github code repository](https://github.com/Sarverott/rokita)
+- [Docker image repository](https://hub.docker.com/r/sarverott/rokita)
+- [Latest documantation](https://drive.google.com/file/d/1yBN6vVjO3HCpFTcwn9rlhhd1JWgvSool/view)
+- [Old release v1.0.0 release](https://github.com/Sarverott/rokita/archive/refs/tags/1.0.zip)
