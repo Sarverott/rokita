@@ -1,6 +1,5 @@
 {
     "name": "sarverott/rokita",
-    "version": "1.0.1",
     "description": "new Controll Panel of New Order, tool to manage your host. Uploaded on server allows you to use path traversal, using easy-to-use filesystem explorer. Tools to upload files, php eval and shell execution are also onboard.",
     "type": "project",
     "license": "MIT",
